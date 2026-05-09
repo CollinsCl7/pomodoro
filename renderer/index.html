@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>番茄钟</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="window-controls">
+    <div class="win-btn minimize" id="minimizeBtn">
+      <svg width="12" height="12" viewBox="0 0 12 12"><rect x="2" y="5.5" width="8" height="1" fill="currentColor"/></svg>
+    </div>
+    <div class="win-btn close" id="closeBtn">
+      <svg width="12" height="12" viewBox="0 0 12 12">
+        <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="container" id="app">
+    <div class="mode-tabs">
+      <button class="mode-btn active" data-mode="pomodoro">🍅 专注</button>
+      <button class="mode-btn" data-mode="shortBreak">😌 短休</button>
+      <button class="mode-btn" data-mode="longBreak">🌿 长休</button>
+    </div>
+
+    <div class="timer-display">
+      <div class="progress-ring">
+        <svg width="200" height="200">
+          <circle cx="100" cy="100" r="88" class="progress-bg" />
+          <circle cx="100" cy="100" r="88" class="progress-bar" id="progressCircle" />
+        </svg>
+        <div class="timer-text">
+          <span id="minutes">25</span><span>:</span><span id="seconds">00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="mainBtn">开始</button>
+      <button id="resetBtn">重置</button>
+    </div>
+
+    <div class="stats">
+      <span>🍅 已完成: <span id="sessionCount">0</span></span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
